@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');   
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
@@ -9,9 +9,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Рабочие среды
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
-
-// Формирование имени в зависимости от среды разработки
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 module.exports = {
    mode: 'development',
@@ -23,13 +20,13 @@ module.exports = {
    },
 
    output: {
-      filename: filename('js'),
-      path: path.resolve(__dirname, 'dist') 
+      filename: isDev ? `js/[name].js` : `js/[name].[hash].js`,
+      path: path.resolve(__dirname, 'dist')
    },
-   //  devtool: isDev ? 'eval-cheap-source-map' : '',    
-   devtool: 'eval-cheap-source-map',      
 
-   devServer: {                             
+   devtool: isDev ? 'source-map' : false,
+
+   devServer: {
       port: 3000,
       open: true,
       contentBase: path.resolve(__dirname, 'dist'),
@@ -44,30 +41,35 @@ module.exports = {
             use: [
                {
                   loader: MiniCssExtractPlugin.loader,
-                  // options: {
-                  //    // hmr: isDev,
-                  //    // reloadAll: true
-                  // },
                },
                'css-loader',
                'sass-loader'
             ]
          },
+
          {
             test: /\.(png|jpg|svg|gif)$/,
             type: 'asset/resource',
-            // Настройки для картинок в css
+            // Настройки путей для картинок
             generator: {
-               filename: 'img/[name][ext]',
-               publicPath: './'
+               filename: isDev ? `img/[name][ext]` : `img/[name].[hash][ext]`,
+               // publicPath: './'
             }
          },
+
+         // Позволяет видеть картинки в html
+         {
+            test: /\.html$/,
+            use: 'html-loader'
+         },
+
+         // Шрифты
          {
             test: /\.(ttf|woff|woff2|eot)$/,
             type: 'asset/resource',
             generator: {
-               filename: 'fonts/[name][ext]',
-               publicPath: './'
+               filename: isDev ? `fonts/[name][ext]` : `fonts/[name].[hash][ext]`,
+               publicPath: '../'
             }
          },
       ]
@@ -76,19 +78,10 @@ module.exports = {
       new CleanWebpackPlugin(),
 
       new MiniCssExtractPlugin({
-         filename: filename('css'),
-         // chunkFilename: '[id].css',
+         filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
       }),
 
-      new CopyWebpackPlugin({
-         patterns: [
-            // img
-            {
-               from: `${path.resolve(__dirname, 'src')}/img`,
-               to: `${path.resolve(__dirname, 'dist')}/img`,
-            },
-         ],
-      }),
+
 
       new HtmlWebpackPlugin({
          title: 'forkio project',
