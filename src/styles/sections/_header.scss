@@ -4,7 +4,8 @@
    background-color: $main-color;
    color: $light-text-color;
    padding-bottom: 500px;
-   background-image: url('../img/header-img.svg'), url('../img/girl.svg');
+   background-image: url('../img/header-img.svg');
+   background-position: center right;
    background-repeat: no-repeat;
 }
 

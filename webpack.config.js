@@ -81,8 +81,6 @@ module.exports = {
          filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
       }),
 
-
-
       new HtmlWebpackPlugin({
          title: 'forkio project',
          template: path.resolve(__dirname, 'src') + '/html/index.html',
