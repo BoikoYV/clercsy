@@ -1,0 +1,31 @@
+
+.header {
+   
+   background-color: $main-color;
+   color: $light-text-color;
+   padding-bottom: 500px;
+   background-image: url('../img/header-img.svg'), url('../img/girl.svg');
+   background-repeat: no-repeat;
+}
+
+.header__menu {
+}
+.menu {
+}
+.header__logo-link {
+}
+.header__logo {
+}
+.menu__login {
+}
+.menu__tel {
+}
+.menu__start {
+}
+
+.header__title {
+   @include title-styles;
+}
+
+.header__subtitle {
+}
