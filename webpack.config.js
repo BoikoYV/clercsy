@@ -1,9 +1,9 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// Оптимизация js/css/картинок
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -13,11 +13,11 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
+
 const config = {
    mode: 'development',
    context: path.resolve(__dirname, 'src'),
 
-   //точка входа
    entry: {
       main: './index.js'
    },
@@ -29,13 +29,14 @@ const config = {
 
    devtool: isDev ? 'source-map' : false,
 
+   // Настройки сервера
    devServer: {
       port: 3000,
       open: true,
       contentBase: path.resolve(__dirname, 'dist'),
    },
 
-   //  Настройки лаудеров
+   // Настройки обработчиков файлов
    module: {
       rules: [
 
@@ -44,7 +45,8 @@ const config = {
             test: /\.js$/,
             use: ['babel-loader']
          },
-         //  Стили
+
+         // Стили
          {
             test: /\.s[ac]ss$/,
             use: [
@@ -56,13 +58,13 @@ const config = {
             ]
          },
 
+         // Картинки
          {
             test: /\.(png|jpg|svg|gif)$/,
             type: 'asset/resource',
             // Настройки путей для картинок
             generator: {
                filename: isDev ? `img/[name][ext]` : `img/[name].[hash][ext]`,
-               // publicPath: './'
             }
          },
 
@@ -76,6 +78,7 @@ const config = {
          {
             test: /\.(ttf|woff|woff2|eot)$/,
             type: 'asset/resource',
+            // Настройки путей для шрифтов
             generator: {
                filename: isDev ? `fonts/[name][ext]` : `fonts/[name].[hash][ext]`,
                publicPath: '../'
@@ -83,42 +86,45 @@ const config = {
          },
       ]
    },
-   // Плагина
+
    plugins: [
+      // Очищение папки
       new CleanWebpackPlugin(),
 
+      // Изъятие css в отдельный от js файл
       new MiniCssExtractPlugin({
          filename: isDev ? `styles/[name].css` : `styles/[name].[hash].css`,
       }),
 
+      // Подключение стилей и js в сгенерированный html
       new HtmlWebpackPlugin({
          title: 'forkio project',
          template: path.resolve(__dirname, 'src') + '/html/index.html',
          filename: 'index.html',
       }),
 
-
-
    ],
 
    // Оптимизация Js /css
    optimization: {},
 
-
 }
 
-// Оптимизирующие плагины для продакшена
-
+// Оптимизация для production mode 
 if (isProd) {
 
+   // Плагин для оптимизации картинок
    config.plugins.push(
       new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
    );
 
+   // Минимизация js/css
    config.optimization =
    {
       minimize: true,
       minimizer: [
+
+         // Минимизация js
          new TerserPlugin({
             extractComments: false,
             terserOptions: {
@@ -127,24 +133,22 @@ if (isProd) {
                }
             }
          }),
+
+         // Минимизация css
          new CssMinimizerPlugin({
             minimizerOptions: {
                preset: [
                   'default',
                   {
-                     discardComments: { removeAll: true },
+                     discardComments: {
+                        removeAll: true
+                     },
                   },
                ],
             },
          }),
       ],
    }
-
-
-
 };
-
-
-
 
 module.exports = config;
