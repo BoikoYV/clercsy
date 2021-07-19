@@ -1,16 +1,19 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 
 // Рабочие среды
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
-module.exports = {
+const config = {
    mode: 'development',
    context: path.resolve(__dirname, 'src'),
 
@@ -35,6 +38,12 @@ module.exports = {
    //  Настройки лаудеров
    module: {
       rules: [
+
+         // JS 
+         {
+            test: /\.js$/,
+            use: ['babel-loader']
+         },
          //  Стили
          {
             test: /\.s[ac]ss$/,
@@ -74,6 +83,7 @@ module.exports = {
          },
       ]
    },
+   // Плагина
    plugins: [
       new CleanWebpackPlugin(),
 
@@ -86,7 +96,55 @@ module.exports = {
          template: path.resolve(__dirname, 'src') + '/html/index.html',
          filename: 'index.html',
       }),
-   ]
+
+
+
+   ],
+
+   // Оптимизация Js /css
+   optimization: {},
+
 
 }
 
+// Оптимизирующие плагины для продакшена
+
+if (isProd) {
+
+   config.plugins.push(
+      new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+   );
+
+   config.optimization =
+   {
+      minimize: true,
+      minimizer: [
+         new TerserPlugin({
+            extractComments: false,
+            terserOptions: {
+               output: {
+                  comments: false,
+               }
+            }
+         }),
+         new CssMinimizerPlugin({
+            minimizerOptions: {
+               preset: [
+                  'default',
+                  {
+                     discardComments: { removeAll: true },
+                  },
+               ],
+            },
+         }),
+      ],
+   }
+
+
+
+};
+
+
+
+
+module.exports = config;
