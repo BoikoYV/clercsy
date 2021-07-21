@@ -13,7 +13,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
-
+console.log(MiniCssExtractPlugin.loader);
 const config = {
    mode: 'development',
    context: path.resolve(__dirname, 'src'),
@@ -33,6 +33,10 @@ const config = {
    devServer: {
       port: 3000,
       open: true,
+      // для получения внешнего пути 
+      host: '192.168.43.157',
+      disableHostCheck: true,
+      // 
       contentBase: path.resolve(__dirname, 'dist'),
    },
 
@@ -50,9 +54,7 @@ const config = {
          {
             test: /\.s[ac]ss$/,
             use: [
-               {
-                  loader: MiniCssExtractPlugin.loader,
-               },
+               MiniCssExtractPlugin.loader,
                'css-loader',
                'sass-loader'
             ]

@@ -1,0 +1,139 @@
+.white-stars {
+   transform-box: fill-box;
+   transform-origin: 50% 50%;
+   animation: feature-star-move 5s ease-in infinite alternate;
+}
+
+// Девочка
+.girls-hair-part,
+.girls-hair {
+   transform-box: fill-box;
+   transform-origin: 50% 50%;
+   animation: features-hair-move 3s ease-in infinite alternate;
+}
+.girls-hat {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: features-hat-move 3s ease-in infinite alternate;
+}
+// Футболист
+.footballer-camera-circle {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: features-camera-move 3s ease-in infinite alternate;
+}
+
+.footballer-hair {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: footballer-hair-move 2s ease-in infinite alternate;
+}
+.footballer-leg {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: footballer-leg-move 2s ease-in infinite alternate;
+}
+
+.footballer-ball {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: footballer-ball-move 2s ease-in infinite alternate;
+}
+
+@keyframes footballer-ball-move {
+   0% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+
+   40% {
+      transform: translate(-5px, -35px) rotate(5deg);
+   }
+   60% {
+      transform: translate(-5px, -35px) rotate(5deg);
+   }
+
+   100% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+}
+
+@keyframes footballer-leg-move {
+   0% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+
+   40% {
+      transform: translate(-3px, -3px) rotate(-2deg);
+   }
+   60% {
+      transform: translate(-3px, -3px) rotate(-2deg);
+   }
+
+   100% {
+      transform: translate(0, 0) rotate(0deg);
+   }
+}
+@keyframes footballer-hair-move {
+   0% {
+      transform: rotate(-8deg);
+   }
+
+   40% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(-8deg);
+   }
+}
+@keyframes feature-star-move {
+   0% {
+      transform: scale(1, 1);
+   }
+
+   40% {
+      transform: scale(1.2, 1.2);
+   }
+
+   100% {
+      transform: scale(1, 1);
+   }
+}
+
+@keyframes features-hair-move {
+   0% {
+      transform: rotate(6deg);
+   }
+
+   50% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: rotate(-6deg);
+   }
+}
+@keyframes features-hat-move {
+   0% {
+      transform: rotate(4deg) translate(7px, 0);
+   }
+
+   50% {
+      transform: rotate(0) translate(0, 0);
+   }
+
+   100% {
+      transform: rotate(-4deg) translate(-7px, 0);
+   }
+}
+
+// Мальчик
+@keyframes features-camera-move {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}

@@ -1,9 +1,9 @@
-@import './reset';
-@import './variables';
-@import './mixins';
-@import './fonts';
-@import './general';
+@import "./base/base";
+@import "./general";
 
-// sections
-@import './sections/header';
+// Секции
+@import "./sections/header";
+@import "./sections/features";
 
+// Анимация
+@import "./animation/animation";

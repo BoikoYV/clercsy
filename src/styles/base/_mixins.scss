@@ -1,0 +1,32 @@
+@mixin title-styles($fz: 48px, $lh: 54px) {
+   font-family: "Recoleta", "Century Gothic", serif;
+   font-size: $fz;
+   font-weight: 600;
+   line-height: $lh;
+}
+
+@mixin btn-styles {
+   font-size: 16px;
+   line-height: 22px;
+
+   padding: 15px 25px;
+
+   transition: 0.3s;
+   text-transform: capitalize;
+
+   color: $light-text-color;
+   border-radius: 160px;
+   background-color: $accent-dark-color;
+}
+
+@mixin btn-hover {
+   color: $main-color;
+   background-color: $accent-light-color;
+}
+
+@mixin link-hover {
+   transition: 0.3s;
+   &:hover {
+      color: $accent-light-color;
+   }
+}

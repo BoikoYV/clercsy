@@ -1,32 +1,122 @@
-
 .header {
-   
    background-color: $main-color;
    color: $light-text-color;
-   padding-bottom: 500px;
-   background-image: url('../img/header-img.svg');
-   background-position: center right;
-   background-repeat: no-repeat;
+   height: 100vh;
+   margin-bottom: 120px;
+   //чтобы при повороте не выпадал контент
+   @media (orientation: landscape) {
+      height: 100%;
+   }
+   @media (max-width: 780px) {
+      margin-bottom: 60px;
+   }
 }
 
-.header__menu {
+.header__inner {
+   display: flex;
+   flex-direction: column;
+   align-content: space-between;
+}
+.header__content {
+   display: grid;
+   grid-template-columns: minmax(280px, 475px) minmax(450px, 738px);
+   column-gap: 10px;
+   align-items: center;
+
+   @media (max-width: 780px) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding-top: 5vh;
+   }
+}
+
+.header__content-text {
+   @media (max-width: 780px) {
+      text-align: center;
+      max-width: 500px;
+      padding-bottom: 30px;
+   }
+}
+
+.header__content-img {
+   position: relative;
+
+   &::after {
+      display: block;
+      content: "";
+      padding-bottom: 78%;
+   }
+
+   @media (max-width: 780px) {
+      width: 90%;
+   }
+}
+
+.header__img {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: scale-down;
 }
 .menu {
+   font-size: 16px;
+   line-height: 22px;
+   display: flex;
+   align-items: center;
+   padding-bottom: 40px;
+   padding-top: 20px;
+
+   @media (max-width: 430px) {
+      padding-bottom: 40px;
+   }
 }
+
 .header__logo-link {
+   margin-right: auto;
 }
-.header__logo {
-}
+
 .menu__login {
+   margin-right: 24px;
+   @include link-hover;
+   @media (max-width: 580px) {
+      display: none;
+   }
 }
+
 .menu__tel {
+   margin-right: 24px;
+   @include link-hover;
+   @media (max-width: 580px) {
+      display: none;
+   }
 }
-.menu__start {
+
+.menu__start-btn {
+   @include btn-styles;
+
+   &:hover {
+      @include btn-hover;
+   }
 }
 
 .header__title {
    @include title-styles;
+   margin-bottom: 18px;
+
+   @media (max-width: 1000px) {
+      font-size: 40px;
+      line-height: 45px;
+   }
+   @media (max-width: 780px) {
+      font-size: 30px;
+      line-height: 35px;
+   }
 }
 
 .header__subtitle {
+   @media (max-width: 1000px) {
+      font-size: 16px;
+   }
 }
