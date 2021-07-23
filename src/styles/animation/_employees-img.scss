@@ -1,0 +1,466 @@
+//Балерина
+.ballet-girl {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: balletgirl-full-rotation 5s ease-in infinite alternate;
+}
+
+.balletgirl-head {
+   animation: balletgirl-head-rotation 3s ease-in infinite alternate;
+}
+
+.balletgirl-hand-down {
+   transform-origin: center;
+   animation: balletgirl-handdown-move 3s ease-in infinite alternate;
+}
+
+.balletgirl-hand-up {
+   animation: balletgirl-handup-move 3s ease-in infinite alternate;
+   transform-origin: center;
+}
+
+.balletgirl-leg {
+   animation: balletgirl-leg-move 3s ease-in infinite alternate;
+   transform-origin: center;
+}
+
+.balletgirl-leg-down {
+   animation: balletgirl-downleg-move 3s ease-in infinite alternate;
+   transform-origin: center;
+}
+
+@keyframes balletgirl-full-rotation {
+   0% {
+      transform: skew(1deg, 1deg);
+   }
+
+   50% {
+      transform: skew(0deg, 0deg);
+   }
+
+   100% {
+      transform: skew(1deg, 1deg);
+   }
+}
+
+@keyframes balletgirl-leg-move {
+   0% {
+      transform: skew(-4deg, 0deg);
+   }
+
+   50% {
+      transform: skew(0deg, 0deg);
+   }
+
+   100% {
+      transform: skew(-4deg, 0deg);
+   }
+}
+
+@keyframes balletgirl-handup-move {
+   0% {
+      transform: skew(1deg, 0deg) rotate(1deg);
+   }
+
+   60% {
+      transform: skew(-1deg, 0deg);
+   }
+
+   100% {
+      transform: skew(1deg, 0deg);
+   }
+}
+
+@keyframes balletgirl-handdown-move {
+   0% {
+      transform: skew(0deg, 1deg);
+   }
+
+   60% {
+      transform: skew(0deg, -1deg);
+   }
+
+   100% {
+      transform: skew(0deg, 1deg);
+   }
+}
+
+@keyframes balletgirl-curles-rotation {
+   0% {
+      opacity: 1;
+      fill: #153a23;
+   }
+
+   100% {
+      opacity: 0.5;
+      fill: #fac7b7;
+   }
+}
+
+@keyframes balletgirl-head-rotation {
+   0% {
+      transform: rotate(2deg) translate(5px, -1px);
+   }
+
+   50% {
+      transform: rotate(0deg) translate(0px, 0px);
+   }
+
+   100% {
+      transform: rotate(2deg) translate(5px, -1px);
+   }
+}
+
+// Цветочник
+.flower-man-top-body {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: flowerman-body-bounce 4s linear infinite alternate;
+}
+.flower-ball,
+.flower,
+.flower-stick {
+   animation: flowerman-ball-move 4s linear infinite alternate;
+}
+.green-hat,
+.flowerman-brows {
+   animation: flowerman-hat-move 3s ease-in-out infinite alternate;
+}
+@keyframes flowerman-hat-move {
+   0% {
+      transform: translate(0, 0);
+   }
+
+   50% {
+      transform: translate(-0.5px, -2px);
+   }
+
+   100% {
+      transform: translate(0, 0);
+   }
+}
+@keyframes flowerman-ball-move {
+   0% {
+      transform: translateY(-1px) rotate(-4deg) skewY(4deg);
+   }
+
+   50% {
+      transform: translateY(-1px) rotate(0deg) skewY(4deg);
+   }
+
+   100% {
+      transform: translateY(-1px) rotate(4deg) skewY(4deg);
+   }
+}
+@keyframes flowerman-body-bounce {
+   0% {
+      transform: rotate(4deg) skewX(2deg);
+   }
+
+   50% {
+      transform: rotate(0deg) skewX(0deg);
+   }
+
+   100% {
+      transform: rotate(-4deg) skewX(2deg);
+   }
+}
+
+// Девочка с сердечком
+.heartgirl-left-leg {
+   transform-box: fill-box;
+   transform-origin: top right;
+   animation: heartgirl-leg-move 4s linear infinite alternate;
+}
+.heartgirl-sweeter,
+.heartgirl-stripes {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: heartgirl-sweeter-move 4s linear infinite alternate;
+}
+.heartgirl-hair {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: heartgirl-hair-move 4s linear infinite alternate;
+}
+.heartgirl-heart {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: heartgirl-heart-move 4s linear infinite alternate;
+}
+
+@keyframes heartgirl-hair-move {
+   0% {
+      transform: rotate(10deg);
+   }
+
+   50% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(-10deg);
+   }
+}
+@keyframes heartgirl-leg-move {
+   0% {
+      transform: rotate(6deg);
+   }
+
+   50% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(6deg);
+   }
+}
+@keyframes heartgirl-heart-move {
+   0% {
+      transform: scale(1, 1);
+   }
+   20% {
+      transform: scale(0.8, 0.8);
+   }
+   40% {
+      transform: scale(1.1, 1.1);
+   }
+   60% {
+      transform: scale(0.8, 0.8);
+   }
+   80% {
+      transform: scale(1.1, 1.1);
+   }
+
+   100% {
+      transform: scale(0.8, 0.8);
+   }
+}
+@keyframes heartgirl-sweeter-move {
+   0% {
+      transform: rotate(2deg) translateY(-1px);
+   }
+
+   50% {
+      transform: rotate(0deg) translateY(0px);
+   }
+
+   100% {
+      transform: rotate(-2deg) translateY(-1px);
+   }
+}
+
+// Мужчина с радугой
+.rainbow-man {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: rainbowman-body-move 4s linear infinite alternate;
+}
+.rainbowman-glasses {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: rainbowman-glasses-move 4s linear infinite alternate;
+}
+
+.rainbowman-rainbow {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: rainbowman-rainbow-appear 5s linear infinite alternate;
+}
+.rainbowman-hand {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: rainbowman-hand-move 5s linear infinite alternate;
+}
+
+.rainbowman-beard {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: rainbowman-beard-move 4s linear infinite alternate;
+}
+
+@keyframes rainbowman-body-move {
+   0% {
+      transform: rotate(-1deg) skewX(2deg);
+   }
+
+   50% {
+      transform: rotate(0deg) skewX(0deg);
+   }
+
+   100% {
+      transform: rotate(1deg) skewX(2deg);
+   }
+}
+
+@keyframes rainbowman-hand-move {
+   0% {
+      transform: translate(-10px, 5px) rotate(-20deg);
+   }
+   50% {
+      transform: translate(0px, 0px) rotate(0);
+   }
+   100% {
+      transform: translate(-10px, 5px) rotate(-20deg);
+   }
+}
+@keyframes rainbowman-glasses-move {
+   0% {
+      transform: translateY(-1px);
+   }
+
+   50% {
+      transform: translateY(0px);
+   }
+
+   100% {
+      transform: translateY(1px);
+   }
+}
+
+@keyframes rainbowman-beard-move {
+   0% {
+      transform: rotate(3deg);
+   }
+
+   20% {
+      transform: rotate(-3deg);
+   }
+   40% {
+      transform: rotate(0deg);
+   }
+   60% {
+      transform: rotate(-3deg);
+   }
+   80% {
+      transform: rotate(3deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+@keyframes rainbowman-rainbow-appear {
+   0% {
+      transform: translate(-10px, -8px) rotate(-20deg);
+      opacity: 0.5;
+   }
+   50% {
+      transform: translate(0px, 0px) rotate(0);
+      opacity: 1;
+   }
+   100% {
+      transform: translate(-10px, -8px) rotate(-20deg);
+      opacity: 0.5;
+   }
+}
+
+// Девочка бабочка
+// Голова мамы
+.butterfly-mother-head {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: butterflygirl-mother-move 4s linear infinite alternate;
+}
+
+// Крылья
+.butterfly-girls-leftwing {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: butterflygirl-leftwing-move 4s linear infinite alternate;
+}
+.butterfly-girl-rightwing {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: butterflygirl-rightwing-move 4s linear infinite alternate;
+}
+// Руки
+.butterfly-girl-righthand {
+   transform-box: fill-box;
+   animation: butterflygirl-righthand-move 4s linear infinite alternate;
+}
+.butterfly-girl-lefthand {
+   transform-box: fill-box;
+   animation: butterflygirl-lefthand-move 4s linear infinite alternate;
+}
+
+@keyframes butterflygirl-mother-move {
+   0% {
+      transform: rotate(5deg);
+   }
+
+   50% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(-5deg);
+   }
+}
+@keyframes butterflygirl-leftwing-move {
+   0% {
+      transform: rotate(5deg);
+   }
+
+   20% {
+      transform: rotate(0deg);
+   }
+   40% {
+      transform: rotate(-5deg);
+   }
+   60% {
+      transform: rotate(0deg);
+   }
+   80% {
+      transform: rotate(5deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
+@keyframes butterflygirl-rightwing-move {
+   0% {
+      transform: rotate(-5deg);
+   }
+
+   20% {
+      transform: rotate(0deg);
+   }
+   40% {
+      transform: rotate(5deg);
+   }
+   60% {
+      transform: rotate(0deg);
+   }
+   80% {
+      transform: rotate(-5deg);
+   }
+
+   100% {
+      transform: rotate(0deg);
+   }
+}
+@keyframes butterflygirl-righthand-move {
+   0% {
+      transform: skewX(10deg);
+   }
+   50% {
+      transform: skewX(0deg);
+   }
+   100% {
+      transform: skewX(10deg);
+   }
+}
+@keyframes butterflygirl-lefthand-move {
+   0% {
+      transform: skewX(-10deg);
+   }
+   50% {
+      transform: skewX(0deg);
+   }
+   100% {
+      transform: skewX(-10deg);
+   }
+}

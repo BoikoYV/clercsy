@@ -11,7 +11,7 @@
 
    padding: 15px 25px;
 
-   transition: 0.3s;
+   transition: 0.5s;
    text-transform: capitalize;
 
    color: $light-text-color;
@@ -30,3 +30,16 @@
       color: $accent-light-color;
    }
 }
+
+@mixin pseudo-el($width, $height) {
+   position: absolute;
+   content: "";
+   width: $width;
+   height: $height;
+}
+
+@mixin svg-anim-declar($anim-name, $anim-time, $anim-easing: ease-in) {
+   transform-box: fill-box;
+   transform-origin: center;
+   animation: $anim-name $anim-time $anim-easing infinite alternate;
+} ;

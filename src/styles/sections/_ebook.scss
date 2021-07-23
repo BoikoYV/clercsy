@@ -1,23 +1,15 @@
-.features {
-   margin-bottom: 112px;
+.ebook {
+   margin-bottom: 120px;
 
    @media (max-width: 780px) {
       margin-bottom: 60px;
    }
 }
-.features__content {
+.ebook__content {
    margin: 0 100px;
    display: grid;
-   grid-template-areas: "girl girl-text" "footballer-text footballer";
    grid-template-columns: 1fr 1fr;
    align-items: center;
-
-   &--girl {
-      grid-area: girl;
-   }
-   &--footballer {
-      grid-area: footballer;
-   }
 
    @media (max-width: 1030px) {
       column-gap: 20px;
@@ -26,26 +18,24 @@
 
    @media (max-width: 580px) {
       row-gap: 20px;
-      grid-template-areas: "girl-text" "girl" "footballer-text" "footballer";
       grid-template-columns: 1fr;
       justify-items: center;
+      text-align: center;
    }
 }
-
-.features__content-img {
+.ebook__content-img {
    position: relative;
 
    &::after {
       display: block;
       content: "";
-      padding-bottom: 103%;
+      padding-bottom: 86%;
    }
    @media (max-width: 580px) {
       width: 80%;
    }
 }
-
-.features__img {
+.ebook__img {
    position: absolute;
    left: 0;
    top: 0;
@@ -54,24 +44,10 @@
    object-fit: scale-down;
 }
 
-.features__text {
-   max-width: 380px;
-   &--girl {
-      grid-area: girl-text;
-      justify-self: end;
-   }
-   &--footballer {
-      grid-area: footballer-text;
-      justify-self: start;
-      margin-top: 30px;
-   }
-
-   @media (max-width: 1030px) {
-      justify-self: center;
-   }
+.ebook__text {
+   max-width: 395px;
 }
-
-.features__tite {
+.ebook__title {
    @include title-styles;
    margin-bottom: 27px;
 
@@ -88,11 +64,20 @@
       margin-bottom: 15px;
    }
 }
-.features__subtitle {
+.ebook__subtitle {
    font-size: 18px;
    line-height: 27px;
+   margin-bottom: 20px;
 
    @media (max-width: 780px) {
       font-size: 16px;
+   }
+}
+.ebook__download-link {
+   display: inline-block;
+   @include btn-styles;
+
+   &:hover {
+      @include btn-hover;
    }
 }

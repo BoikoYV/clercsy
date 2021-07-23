@@ -1,4 +1,4 @@
-<svg width="738" height="544" viewBox="0 0 738 544" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="738" height="544" viewbox="0 0 738 544" fill="none" xmlns="http://www.w3.org/2000/svg">
    <g clip-path="url(#clip0)">
       <!-- Листья -->
       <g class="leaves">
@@ -739,7 +739,7 @@
 
 
    <defs>
-      <clipPath id="clip0">
+      <clipPath>
          <rect width="738" height="580" fill="white" transform="translate(0 -30)" />
       </clipPath>
    </defs>

@@ -1,0 +1,108 @@
+.info {
+   margin-bottom: 120px;
+
+   @media (max-width: 780px) {
+      margin-bottom: 60px;
+   }
+}
+.info__title {
+   @include title-styles;
+   margin-bottom: 27px;
+   text-align: center;
+
+   @media (max-width: 1000px) {
+      font-size: 40px;
+      line-height: 45px;
+   }
+
+   @media (max-width: 780px) {
+      font-size: 30px;
+      line-height: 35px;
+   }
+   @media (max-width: 580px) {
+      margin-bottom: 15px;
+   }
+}
+.info__subtitle {
+   font-size: 18px;
+   line-height: 27px;
+   text-align: center;
+   margin-bottom: 30px;
+
+   @media (max-width: 780px) {
+      font-size: 16px;
+   }
+}
+.info__list {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(220px, 353px));
+   justify-content: space-between;
+   column-gap: 20px;
+   @media (max-width: 950px) {
+      grid-template-columns: repeat(1, minmax(220px, 353px));
+      justify-content: center;
+      column-gap: 0;
+      row-gap: 40px;
+   }
+}
+
+.info__item {
+   background: $light-text-color;
+   box-shadow: 5px 5px 20px #e9e4d5;
+   border-radius: 15px;
+   background-repeat: no-repeat;
+   background-position: 40px 50px;
+   padding: 50px 40px 66px;
+   max-width: 353px;
+   align-self: start;
+
+   @media (max-width: 1200px) {
+      padding: 50px 25px 66px;
+   }
+   @media (max-width: 950px) {
+      padding: 30px 10px 30px;
+      background-position: 25px 20px;
+   }
+}
+.info__item--protect {
+   background-image: url("../img/info-icon1.svg");
+   background-size: 62px 75px;
+}
+.info__item--success {
+   background-image: url("../img/info-icon2.svg");
+   background-size: 83px 75px;
+}
+.info__item--knowledge {
+   background-image: url("../img/info-icon3.svg");
+   background-size: 72px 73px;
+}
+
+.info__item-title {
+   margin-top: 100px;
+   margin-bottom: 23px;
+   @include title-styles(28px, 31px);
+   @media (max-width: 1030px) {
+      font-size: 20px;
+   }
+   @media (max-width: 950px) {
+      margin-top: 70px;
+   }
+}
+.info__item-list {
+   margin-left: 24px;
+}
+.info__item-part {
+   position: relative;
+   font-size: 16px;
+   line-height: 22px;
+   &:not(:last-child) {
+      margin-bottom: 15px;
+   }
+   &::before {
+      @include pseudo-el(9px, 9px);
+      left: -20px;
+      top: 6px;
+      background-color: $main-color;
+      border-radius: 50%;
+   }
+}

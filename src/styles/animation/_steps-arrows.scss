@@ -1,0 +1,44 @@
+@keyframes steps-arrow-wide-move {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   20% {
+      transform: rotate(8deg);
+   }
+   40% {
+      transform: rotate(-8deg);
+   }
+   60% {
+      transform: rotate(8deg);
+   }
+   80% {
+      transform: rotate(-8deg);
+   }
+
+   100% {
+      transform: rotate(8deg);
+   }
+}
+@keyframes steps-arrow-narrow-move {
+   0% {
+      transform: rotate(105deg);
+   }
+
+   20% {
+      transform: rotate(80deg);
+   }
+   40% {
+      transform: rotate(105deg);
+   }
+   60% {
+      transform: rotate(80deg);
+   }
+   80% {
+      transform: rotate(105deg);
+   }
+
+   100% {
+      transform: rotate(80deg);
+   }
+}

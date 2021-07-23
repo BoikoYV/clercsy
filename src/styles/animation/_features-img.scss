@@ -1,9 +1,8 @@
 .white-stars {
    transform-box: fill-box;
    transform-origin: 50% 50%;
-   animation: feature-star-move 5s ease-in infinite alternate;
+   animation: stars-move 5s ease-in infinite alternate;
 }
-
 // Девочка
 .girls-hair-part,
 .girls-hair {
@@ -86,19 +85,6 @@
       transform: rotate(-8deg);
    }
 }
-@keyframes feature-star-move {
-   0% {
-      transform: scale(1, 1);
-   }
-
-   40% {
-      transform: scale(1.2, 1.2);
-   }
-
-   100% {
-      transform: scale(1, 1);
-   }
-}
 
 @keyframes features-hair-move {
    0% {
@@ -135,5 +121,19 @@
 
    100% {
       transform: rotate(360deg);
+   }
+}
+
+@keyframes stars-move {
+   0% {
+      transform: scale(0.9, 0.9);
+   }
+
+   50% {
+      transform: scale(1.1, 1.1);
+   }
+
+   100% {
+      transform: scale(0.9, 0.9);
    }
 }
