@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="66" height="146" fill="none" viewBox="0 0 66 146">
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="146" fill="none" viewbox="0 0 66 146">
    <defs>
-      <clipPath id="a">
+      <clippath id="a">
          <path fill="#fff" d="M0 0h66v145H0z" transform="translate(0 .125)" />
-      </clipPath>
+      </clippath>
    </defs>
    <g clip-path="url(#a)">
       <path fill="#F7BC28"

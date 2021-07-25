@@ -1,25 +1,17 @@
 .property-man-head {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: property-man-move 5s ease-in infinite alternate;
+   @include svg-anim-declar(property-man-move, 5s);
 }
 
 .property-girl-body {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: property-girl-move 5s ease-in infinite alternate;
+   @include svg-anim-declar(property-girl-move, 5s);
 }
 
 .stars {
-   transform-box: fill-box;
-   transform-origin: 50% 50%;
-   animation: stars-move 5s ease-in infinite alternate;
+   @include svg-anim-declar(stars-move, 5s);
 }
 
 .smoke {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: property-smoke 5s ease-in infinite alternate;
+   @include svg-anim-declar(property-smoke, 5s);
 }
 
 @keyframes property-man-move {

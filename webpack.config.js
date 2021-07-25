@@ -24,7 +24,7 @@ const config = {
 
    output: {
       filename: isDev ? `js/[name].js` : `js/[name].[hash].js`,
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'docs')
    },
 
    devtool: isDev ? 'source-map' : false,
@@ -34,10 +34,10 @@ const config = {
       port: 3000,
       open: true,
       // для получения внешнего пути 
-      host: '192.168.43.157',
+      host: '192.168.171.157',
       disableHostCheck: true,
       // 
-      contentBase: path.resolve(__dirname, 'dist'),
+      contentBase: path.resolve(__dirname, 'docs'),
    },
 
    // Настройки обработчиков файлов

@@ -739,8 +739,8 @@
 
 
    <defs>
-      <clipPath>
+      <clippath>
          <rect width="738" height="580" fill="white" transform="translate(0 -30)" />
-      </clipPath>
+      </clippath>
    </defs>
 </svg>

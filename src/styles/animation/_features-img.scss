@@ -1,42 +1,29 @@
 .white-stars {
-   transform-box: fill-box;
-   transform-origin: 50% 50%;
-   animation: stars-move 5s ease-in infinite alternate;
+   @include svg-anim-declar(stars-move, 5s);
 }
 // Девочка
 .girls-hair-part,
 .girls-hair {
-   transform-box: fill-box;
-   transform-origin: 50% 50%;
-   animation: features-hair-move 3s ease-in infinite alternate;
+   @include svg-anim-declar(features-hair-move, 3s);
 }
+
 .girls-hat {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: features-hat-move 3s ease-in infinite alternate;
+   @include svg-anim-declar(features-hat-move, 3s);
 }
 // Футболист
 .footballer-camera-circle {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: features-camera-move 3s ease-in infinite alternate;
+   @include svg-anim-declar(features-camera-move, 3s);
 }
 
 .footballer-hair {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: footballer-hair-move 2s ease-in infinite alternate;
+   @include svg-anim-declar(footballer-hair-move, 2s);
 }
 .footballer-leg {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: footballer-leg-move 2s ease-in infinite alternate;
+   @include svg-anim-declar(footballer-leg-move, 2s);
 }
 
 .footballer-ball {
-   transform-box: fill-box;
-   transform-origin: center;
-   animation: footballer-ball-move 2s ease-in infinite alternate;
+   @include svg-anim-declar(footballer-ball-move, 2s);
 }
 
 @keyframes footballer-ball-move {

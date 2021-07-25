@@ -1,0 +1,114 @@
+.updates {
+   margin-bottom: 45px;
+   background-color: #f2efe6;
+   padding: 54px 0 80px;
+
+   @media (max-width: 780px) {
+      margin-bottom: 40px;
+      padding: 30px 0 30px;
+   }
+}
+.updates-inner {
+   display: flex;
+   justify-content: space-between;
+   @media (max-width: 820px) {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+}
+.updates__text {
+   width: 50%;
+   @media (max-width: 820px) {
+      text-align: center;
+      width: 100%;
+   }
+}
+.updates__form-block {
+   width: 50%;
+   @media (max-width: 820px) {
+      width: 60%;
+      text-align: center;
+   }
+   @media (max-width: 680px) {
+      width: 80%;
+   }
+   @media (max-width: 420px) {
+      width: 100%;
+   }
+}
+.updates__title {
+   @include title-styles;
+   margin-bottom: 27px;
+
+   @media (max-width: 1000px) {
+      font-size: 40px;
+      line-height: 45px;
+   }
+
+   @media (max-width: 820px) {
+      margin-bottom: 15px;
+   }
+
+   @media (max-width: 780px) {
+      font-size: 30px;
+      line-height: 35px;
+   }
+}
+.updates__subtitle {
+   font-size: 18px;
+   line-height: 27px;
+   @media (max-width: 820px) {
+      margin-bottom: 20px;
+   }
+   @media (max-width: 780px) {
+      font-size: 16px;
+   }
+}
+
+.updates__form {
+   position: relative;
+   margin-bottom: 12px;
+}
+.updates__form-input {
+   @include btn-styles;
+   background-color: #fff;
+   width: 100%;
+   text-transform: none;
+   color: $main-color;
+
+   &:focus,
+   &::placeholder {
+      color: $main-color;
+   }
+   @media (max-width: 530px) {
+      margin-bottom: 70px;
+   }
+}
+.updates__form-btn {
+   @include btn-styles;
+   position: absolute;
+
+   &:hover {
+      @include btn-hover;
+   }
+   @media (min-width: 531px) {
+      right: 0;
+      top: 0;
+   }
+   @media (max-width: 530px) {
+      width: 100%;
+      left: 0;
+      bottom: 0;
+   }
+}
+.updates__policy {
+   font-size: 14px;
+}
+.updates__policy-link {
+   color: $accent-dark-color;
+   white-space: nowrap;
+   &:hover {
+      color: $accent-light-color;
+   }
+}

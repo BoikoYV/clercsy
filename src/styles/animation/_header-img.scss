@@ -18,23 +18,6 @@
    animation: star-move 5s 1.5s ease-in infinite alternate;
 }
 
-// Серпантин
-.serpantin1 {
-   transform-box: fill-box;
-   animation: serpantin1-move 7s ease-in-out infinite alternate;
-}
-
-.serpantin4 {
-   transform-box: fill-box;
-   animation: serpantin4-move 7s ease-in-out infinite alternate;
-}
-
-.serpantin2,
-.serpantin3 {
-   transform-box: fill-box;
-   animation: serpantin2-move 7s ease-in-out infinite alternate;
-}
-
 // Мужчина
 .hand-finger {
    animation: hand-finger-move 3s ease-in infinite alternate;
@@ -61,21 +44,15 @@
 }
 
 .camera-disc {
-   animation: camera-disc-rotate 5s linear infinite alternate forwards;
-   transform-origin: center;
-   transform-box: fill-box;
+   @include svg-anim-declar(camera-disc-rotate, 5s, linear);
 }
 
 // Певица
 .singer-hand-microphone {
-   animation: singer-hand-move 6s ease-in infinite alternate;
-   transform-origin: center;
-   transform-box: fill-box;
+   @include svg-anim-declar(singer-hand-move, 6s);
 }
 .singer-head {
-   animation: singer-head-move 6s ease-in infinite alternate;
-   transform-origin: center;
-   transform-box: fill-box;
+   @include svg-anim-declar(singer-head-move, 6s);
 }
 
 @keyframes leaves-bounce {
@@ -104,63 +81,6 @@
 
    100% {
       transform: translateY(-5px) rotate(-2deg);
-      opacity: 1;
-   }
-}
-
-@keyframes serpantin1-move {
-   0% {
-      transform: translate(-250px, 100px) rotate(0);
-      opacity: 0;
-   }
-   50% {
-      transform: translate(0px, 0) rotate(270deg);
-      opacity: 1;
-   }
-   80% {
-      transform: translate(0px, 0) rotate(270deg);
-      opacity: 1;
-   }
-   100% {
-      transform: translate(0px, 0) rotate(270deg);
-      opacity: 1;
-   }
-}
-
-@keyframes serpantin2-move {
-   0% {
-      transform: translate(250px, 100px) rotate(0);
-      opacity: 0;
-   }
-   50% {
-      transform: translate(0px, 0) rotate(-270deg);
-      opacity: 1;
-   }
-   80% {
-      transform: translate(0px, 0) rotate(-270deg);
-      opacity: 1;
-   }
-   100% {
-      transform: translate(0px, 0) rotate(-270deg);
-      opacity: 1;
-   }
-}
-
-@keyframes serpantin4-move {
-   0% {
-      transform: translate(-100px, 300px) rotate(0);
-      opacity: 0;
-   }
-   50% {
-      transform: translate(30px, -20px) rotate(270deg);
-      opacity: 1;
-   }
-   80% {
-      transform: translate(30px, -20px) rotate(270deg);
-      opacity: 1;
-   }
-   100% {
-      transform: translate(30px, -20px) rotate(270deg);
       opacity: 1;
    }
 }
@@ -263,32 +183,20 @@
 // Певица
 @keyframes singer-head-move {
    0% {
-      transform: translate(70px, -60px) rotate(50deg);
-   }
-   30% {
-      transform: translate(70px, -60px) rotate(50deg);
+      transform: translate(0px, 0px) rotate(0);
    }
 
-   50% {
-      transform: translate(0px, 0px) rotate(0);
-   }
    100% {
-      transform: translate(0px, 0px) rotate(0);
+      transform: translate(70px, -60px) rotate(50deg);
    }
 }
 
 @keyframes singer-hand-move {
    0% {
-      transform: translate(60px, 50px) rotate(50deg);
-   }
-   25% {
-      transform: translate(60px, 50px) rotate(50deg);
+      transform: translate(0px, 0px) rotate(0);
    }
 
-   50% {
-      transform: translate(0px, 0px) rotate(0);
-   }
    100% {
-      transform: translate(0px, 0px) rotate(0);
+      transform: translate(60px, 50px) rotate(50deg);
    }
 }
