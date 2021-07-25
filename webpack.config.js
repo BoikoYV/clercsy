@@ -33,10 +33,6 @@ const config = {
    devServer: {
       port: 3000,
       open: true,
-      // для получения внешнего пути 
-      host: '192.168.171.157',
-      disableHostCheck: true,
-      // 
       contentBase: path.resolve(__dirname, 'docs'),
    },
 

@@ -1,4 +1,12 @@
 node_modules
-.DS_Store
 package-lock.json
-dist
+# Ignore Logs
+logs
+*.log
+.DS_Store
+ds_store
+thumbs.db
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
